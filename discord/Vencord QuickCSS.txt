@@ -1,0 +1,190 @@
+/**
+ * @name system24
+ * @description a tui-style discord theme.
+ * @author refact0r
+ * @version 2.1.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* font, change to '' for default discord font */
+    --font: 'DM Mono';
+    --code-font: 'DM Mono';
+    font-weight: 300;
+    letter-spacing: -0.05ch;
+
+    --gap: 12px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    --custom-dms-icon: off;
+    --dms-icon-svg-url: url('');
+    --dms-icon-svg-size: 90%;
+    --dms-icon-color-before: var(--icon-subtle);
+    --dms-icon-color-after: var(--white);
+    --custom-dms-background: off;
+    --dms-background-image-url: url('');
+    --dms-background-image-size: cover;
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+
+    --background-image: off;
+    --background-image-url: url('');
+
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+
+    --small-user-panel: on;
+
+    --unrounding: on;
+    --round-pfp: off;
+    --remove-pfp-decor: off;
+
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
+}
+
+/* color options */
+:root {
+    --colors: on;
+
+    /* text colors */
+    --text-0: var(--bg-4);
+    --text-1: oklch(95% 0 0);
+    --text-2: oklch(85% 0 0);
+    --text-3: oklch(75% 0 0);
+    --text-4: oklch(60% 0 0);
+    --text-5: oklch(40% 0 0);
+
+    /* background and dark colors */
+    --bg-1: oklch(31% 0 0);
+    --bg-2: oklch(27% 0 0);
+    --bg-3: oklch(23% 0 0);
+    --bg-4: oklch(19% 0 0);
+    --hover: oklch(54% 0 0 / 0.1);
+    --active: oklch(54% 0 0 / 0.2);
+    --active-2: oklch(54% 0 0 / 0.3);
+    --message-hover: var(--hover);
+
+    /* ============= ALL PURPLE REMOVED – everything now white ============= */
+    /* purple base colors */
+    --purple-1: oklch(100% 0 0);
+    --purple-2: oklch(100% 0 0);
+    --purple-3: oklch(100% 0 0);
+    --purple-4: oklch(100% 0 0);
+    --purple-5: oklch(100% 0 0);
+
+    /* accent colors (explicitly white, not using purple vars) */
+    --accent-1: white;
+    --accent-2: white;
+    --accent-3: white;
+    --accent-4: white;
+    --accent-5: white;
+    --accent-new: var(--red-2);
+
+    /* mention / reply gradients (now white with transparency) */
+    --mention: linear-gradient(to right, color-mix(in hsl, white, transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, white, transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, white, transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, white, transparent 95%) 40%, transparent);
+
+    /* status indicator – streaming now white */
+    --online: var(--green-2);
+    --dnd: var(--red-2);
+    --idle: var(--yellow-2);
+    --streaming: white;
+    --offline: var(--text-4);
+
+    /* borders – hover border now white */
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: white;
+    --button-border: hsl(220, 0%, 100%, 0.1);
+
+    /* other base colors (unchanged) */
+    --red-1: oklch(75% 0.13 0);
+    --red-2: oklch(70% 0.13 0);
+    --red-3: oklch(65% 0.13 0);
+    --red-4: oklch(60% 0.13 0);
+    --red-5: oklch(55% 0.13 0);
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.11 215);
+    --blue-2: oklch(70% 0.11 215);
+    --blue-3: oklch(65% 0.11 215);
+    --blue-4: oklch(60% 0.11 215);
+    --blue-5: oklch(55% 0.11 215);
+
+    --yellow-1: oklch(80% 0.12 90);
+    --yellow-2: oklch(75% 0.12 90);
+    --yellow-3: oklch(70% 0.12 90);
+    --yellow-4: oklch(65% 0.12 90);
+    --yellow-5: oklch(60% 0.12 90);
+}
+
+/* ===== EXTRA OVERRIDES for any hardcoded purple in imported CSS ===== */
+/* This catches unread badges, scrollbars, selection, etc. */
+::-webkit-scrollbar-thumb {
+    background: white !important;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-3) !important;
+}
+::selection {
+    background: white !important;
+    color: black !important;
+}
+
+/* Force any element that might still have a purple background or color */
+[class*="unread"],
+[class*="mention"],
+[class*="reply"],
+[class*="streaming"],
+[class*="accent"],
+[class*="purple"] {
+    color: white !important;
+    background-color: transparent !important;
+    border-color: white !important;
+}
+
+/* Buttons and interactive elements that use accent */
+.button-38aScG, .lookFilled-1Gx00y, .lookOutlined-3sRX3a,
+.colorBrand-3pXr91, .colorPrimary-3b3xI6 {
+    background: white !important;
+    color: var(--bg-4) !important;
+}
+.button-38aScG:hover, .lookFilled-1Gx00y:hover {
+    background: var(--text-4) !important;
+}
